@@ -302,6 +302,7 @@ public class PrinciapalActivity extends AppCompatActivity {
             AlertDialog.Builder alert = xGambiarra.dialog(this,
                     "Você tem certeza que deseja excluir essa movimentação?",
                     "Excluir Movimentação da Conta");
+            saldoAtual =1.0;
             alert.setCancelable(false);
             alert.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                 @Override
