@@ -309,13 +309,18 @@ public class PrinciapalActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     int position = viewHolder.getAdapterPosition();
                     currentMovimentacao = listaMovimentacao.get(position);
-                    Toast.makeText(PrinciapalActivity.this, "a"+currentMovimentacao.getKey(), Toast.LENGTH_SHORT).show();
+                    String mess = "Você apagou uma "+
+                            (currentMovimentacao.getTipo() == Movimentacao.TYPE_DESPESA ? "Despesa" : "Receita")+
+                            " no valor de R$"+
+                            currentMovimentacao.getValor();
+                    Toast.makeText(PrinciapalActivity.this, mess, Toast.LENGTH_SHORT).show();
                     movimentacaoRef= firebaseRef
                             .child(ConfigurarFirebase.TABLE_MOVIMENTACOS)
                             .child(idUsuario)
                             .child(mesAnoSelecionada);
                     movimentacaoRef.child(currentMovimentacao.getKey()).removeValue();
                     movimentacoesAdapter.notifyItemRemoved(position);
+                    atualizarSaldo();
                 }
             })
             .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -328,6 +333,22 @@ public class PrinciapalActivity extends AppCompatActivity {
                         }
                     });
             alert.create().show();
+
+
+            Log.i("Informação", xGambiarra.COD_OK);
+        }catch (Exception e){
+            Log.i("Informação aq", xGambiarra.COD_ERROR_LOG + e.getMessage());
+        }
+    }/**/
+    public void atualizarSaldo(){
+        try{
+            /**/
+            /**/
+            receitaTotal = currentMovimentacao.getTipo().equals(Movimentacao.TYPE_DESPESA) ?
+                    receitaTotal + currentMovimentacao.getValor() :
+                    receitaTotal - currentMovimentacao.getValor();
+            String mess = "Saldo: R$ "+ receitaTotal;
+            txtSaldo.setText(mess);
 
 
             Log.i("Informação", xGambiarra.COD_OK);
