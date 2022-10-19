@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="Theme.Organizze" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_700</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/purple_700</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/teal_700</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+    <style name="semAvtionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+
+    <style name="Theme.Despesas" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorAcent</item>
+        <item name="colorPrimaryVariant">@color/colorAcent</item>
+        <!--O item abaixo muda  a cor da barra de status-->
+        <item name="android:statusBarColor">@color/colorAcent</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorPressed</item>
+
+
+
+
+    </style>
+    <style name="Theme.Receitas" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/pressedGreen</item>
+        <item name="colorPrimaryVariant">@color/pressedGreen</item>
+        <!--O item abaixo muda  a cor da barra de status-->
+        <item name="android:statusBarColor">@color/pressedGreen</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/normalGreen</item>
+        <item name="colorSecondaryVariant">@color/normalGreen</item>
+
+
+    </style>
+
+
+    <style name="Theme.Organizze.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Organizze.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
