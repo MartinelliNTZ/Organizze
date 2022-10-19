@@ -309,6 +309,12 @@ public class PrinciapalActivity extends AppCompatActivity {
                     int position = viewHolder.getAdapterPosition();
                     currentMovimentacao = listaMovimentacao.get(position);
                     Toast.makeText(PrinciapalActivity.this, "a"+currentMovimentacao.getKey(), Toast.LENGTH_SHORT).show();
+                    movimentacaoRef= firebaseRef
+                            .child(ConfigurarFirebase.TABLE_MOVIMENTACOS)
+                            .child(idUsuario)
+                            .child(mesAnoSelecionada);
+                    movimentacaoRef.child(currentMovimentacao.getKey()).removeValue();
+                    movimentacoesAdapter.notifyItemRemoved(position);
                 }
             })
             .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -316,6 +322,8 @@ public class PrinciapalActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(PrinciapalActivity.this, "Cancelado", Toast.LENGTH_SHORT).show();
                             movimentacoesAdapter.notifyDataSetChanged();
+
+
                         }
                     });
             alert.create().show();
