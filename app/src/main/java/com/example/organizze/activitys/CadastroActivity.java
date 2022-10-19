@@ -34,6 +34,7 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
         linkagem();
+        getSupportActionBar().hide();
 
         btCadastrarCad.setOnClickListener(new View.OnClickListener() {
             @Override

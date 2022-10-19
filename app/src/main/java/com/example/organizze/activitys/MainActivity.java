@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 private int img1, img2, img3, img4;
                 private Button btCadastro, btLogin;
                 private FirebaseAuth autenticacao;
+                private  boolean first =true;
 
 
     @Override
@@ -72,9 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
        if (autenticacao.getCurrentUser() !=null){
            startActivity(new Intent(MainActivity.this, PrinciapalActivity.class));
-       }else{
+       }else if(first){
            startActivity(new Intent(this, Slider.class));/*Chama os slides*/
-       }
+           first =false;
+        }
 
     }
 

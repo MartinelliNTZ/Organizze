@@ -147,7 +147,7 @@ public class PrinciapalActivity extends AppCompatActivity {
                 receitaTotal=usuario.getTotalReceitas();
                 despesasTotal= usuario.getTotalDespesas();
                 saldoAtual=receitaTotal-despesasTotal;
-                txtSaldo.setText("Saldo: "+saldoAtual);
+                txtSaldo.setText("Saldo: R$ "+saldoAtual);
                 nomeUsuario=usuario.getNome();
                 txtSaudacao.setText("Olá "+nomeUsuario+". Como você está hoje?");
 

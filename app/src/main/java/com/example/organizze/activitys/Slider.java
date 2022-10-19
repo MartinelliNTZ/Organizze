@@ -36,7 +36,7 @@ public class Slider extends IntroActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Toast.makeText(this, "564sfd5f4ds", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "564sfd5f4ds", Toast.LENGTH_SHORT).show();
         releaseInstance();
         finish();
     }

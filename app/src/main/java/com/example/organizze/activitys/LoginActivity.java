@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         linkagem();
         ac = this;
-
+        getSupportActionBar().hide();
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
