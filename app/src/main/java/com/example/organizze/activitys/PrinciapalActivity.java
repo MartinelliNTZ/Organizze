@@ -344,11 +344,22 @@ public class PrinciapalActivity extends AppCompatActivity {
         try{
             /**/
             /**/
-            receitaTotal = currentMovimentacao.getTipo().equals(Movimentacao.TYPE_DESPESA) ?
-                    receitaTotal + currentMovimentacao.getValor() :
-                    receitaTotal - currentMovimentacao.getValor();
-            String mess = "Saldo: R$ "+ receitaTotal;
+            despesasTotal = currentMovimentacao.getTipo().equals(Movimentacao.TYPE_DESPESA) ?
+                    despesasTotal - currentMovimentacao.getValor() :
+                    despesasTotal;
+            usuarioRef.child("totalReceitas").setValue(receitaTotal);
+
+            receitaTotal = currentMovimentacao.getTipo().equals(Movimentacao.TYPE_RECEITA) ?
+                    receitaTotal - currentMovimentacao.getValor() :
+                    receitaTotal;
+            usuarioRef.child("totalDespesas").setValue(despesasTotal);
+
+
+
+            String mess = "Saldo: R$ "+ (receitaTotal-despesasTotal);
+
             txtSaldo.setText(mess);
+
 
 
             Log.i("Informação", xGambiarra.COD_OK);
