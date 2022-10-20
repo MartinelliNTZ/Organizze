@@ -31,6 +31,5 @@
 
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://terabox.com/s/1b1auZqSMJUjOdZX341HSog)
 <html>
-<div class="responsive-video">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C9Etwq9hl9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen /></div></html>
+<div class="responsive-video"  width="560" height="315" src="https://www.youtube.com/embed/C9Etwq9hl9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></div></html>
 
